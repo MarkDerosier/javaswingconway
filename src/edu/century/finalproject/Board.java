@@ -25,6 +25,5 @@ public abstract class Board {
 
   public abstract void rules();
 
-  public abstract void intialize();
 
 }
