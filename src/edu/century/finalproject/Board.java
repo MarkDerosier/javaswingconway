@@ -3,7 +3,7 @@ package edu.century.finalproject;
 public abstract class Board {
   private int height;
   private int width;
-  private int board[][];
+  int board[][];
 
   public Board(int width, int height) {
     this.width = width;
