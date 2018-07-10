@@ -23,6 +23,10 @@ public abstract class Board {
     return this.board.clone();
   }
 
+  public int[][] getBoard() {
+    return this.board;
+  }
+
   //sums the values of the 8 cells around a cell
   //https://en.wikipedia.org/wiki/Moore_neighborhood
   public int[][] calculateNeighbors(int out_of_bounds_value) {
