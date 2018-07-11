@@ -96,14 +96,13 @@ public void createTopPanel(String north) {
 @Override
 	public void paint(Graphics g) {
     super.paint(g);
-    try {
+    try {// color a selected cell
         for (Point newCellArea : point) {
-            // Draw new point
             g.setColor(Color.blue);
             g.fillRect(cellSize + (cellSize*newCellArea.x), cellSize + (cellSize*newCellArea.y), cellSize, cellSize);
         }
     } catch (ConcurrentModificationException cme) {}
-    // Setup grid
+    // Set up the grid
     g.setColor(Color.BLACK);
     for (int i=0; i<=gridWidth; i++) {
         g.drawLine(((i * cellSize) + cellSize), cellSize, (i * cellSize) + cellSize, cellSize + (cellSize * gridHeight));
@@ -137,8 +136,10 @@ public void mouseClicked(MouseEvent e) {
 	int y = e.getPoint().y/cellSize - 1;
 	 if ((x >= 0) && (x < gridWidth) && (y >= 0) && (y < gridHeight)) {
          addPoint(x,y);
+         System.out.println("X: " + x + "\tY: " + y);
+    
      }
-	System.out.println("X: " + x + "\tY: " + y);
+	
 	
 }
 
@@ -160,6 +161,7 @@ public void mouseExited(MouseEvent e) {
 
 @Override
 public void mousePressed(MouseEvent e) {
+	
 	System.out.println("Mouse pressed. ");
 	
 }
@@ -173,6 +175,12 @@ public void mouseReleased(MouseEvent e) {
 public static void main(String[] args) {
 	GameBoardGui gui = new GameBoardGui("Game Board", 25, 25);
 	gui.setVisible(true);
+}
+
+@Override
+public void actionPerformed(ActionEvent arg0) {
+	// TODO Auto-generated method stub
+	
 }
 
 
